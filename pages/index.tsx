@@ -2,10 +2,13 @@ import LeagueTable from "../components/LeagueTable/LeagueTable";
 import React from "react";
 import { SAMPLE_LEAGUE_TABLE } from "./api/SampleData";
 import { TeamType } from "../components/LeagueTable/Positions";
+import { GetStaticProps, NextPage } from "next";
+
 interface Props {
   positions: TeamType[];
 }
-export default function Home(props: Props) {
+
+const Home: NextPage<Props> = (props) => {
   return (
     <div className="text-center w-full">
       <h1 className="text-2xl pb-2 pt-2 font-bold">
@@ -14,10 +17,11 @@ export default function Home(props: Props) {
       <LeagueTable positions={props.positions} />
     </div>
   );
-}
+};
 
+export default Home;
 // This function gets called at build time
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   // Call an external API endpoint to get posts
   //  const res = await fetch("https://.../posts");
   //const posts = await res.json();
@@ -29,4 +33,4 @@ export async function getStaticProps() {
       positions: SAMPLE_LEAGUE_TABLE,
     },
   };
-}
+};
