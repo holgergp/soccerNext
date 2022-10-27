@@ -22,7 +22,7 @@ export default Home;
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
   // Call an external API endpoint to get posts
-  const res = await fetch("https://soccer-next.netlify.app/api/teams");
+  const res = await fetch("https://soccer-solid.netlify.app/.netlify/functions/soccer-data-function");
   const positions = await res.json();
 
   // By returning { props: { posts } }, the Blog component
