@@ -7,7 +7,6 @@ import {
   recalculateSwappedPositions,
   TeamType,
 } from "./Positions";
-import { Card, Col } from "react-bootstrap";
 import { SAMPLE_LEAGUE_TABLE } from "../../pages/api/SampleData";
 
 const LeagueTable = () => {
@@ -28,24 +27,17 @@ const LeagueTable = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <Col md={6}>
-        <Card bg="dark">
-          <Card.Header role={"heading"}>
-            <Card.Title>Ligatabelle zum Selberstecken</Card.Title>
-          </Card.Header>
-          <Card.Body>
-            {positions.map((team, index) => (
-              <Position
-                team={team}
-                rank={index + 1}
-                key={index}
-                swapPositions={swapPositions}
-                updateTeamname={updateTeamname}
-              />
-            ))}
-          </Card.Body>
-        </Card>
-      </Col>
+      <div className="grid gap-y-1 place-items-center leagueTable">
+        {positions.map((team, index) => (
+          <Position
+            team={team}
+            rank={index + 1}
+            key={index}
+            swapPositions={swapPositions}
+            updateTeamname={updateTeamname}
+          />
+        ))}
+      </div>
     </DndProvider>
   );
 };
