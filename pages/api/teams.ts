@@ -6,7 +6,7 @@ export default function handler(
   nextApiResponse: NextApiResponse<TeamType[]>
 ) {
   fetch(
-    "https://soccer-next.netlify.app/.netlify/functions/soccer-data-function"
+    "https://soccer-solid.netlify.app/.netlify/functions/soccer-data-function"
   )
     .then((res) => res.json())
     .then((res) => nextApiResponse.status(200).json(res))
