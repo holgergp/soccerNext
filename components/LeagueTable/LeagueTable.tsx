@@ -7,11 +7,13 @@ import {
   recalculateSwappedPositions,
   TeamType,
 } from "./Positions";
-import { SAMPLE_LEAGUE_TABLE } from "../../pages/api/SampleData";
 
-const LeagueTable = () => {
-  const [positions, setPositions] = useState<TeamType[]>(SAMPLE_LEAGUE_TABLE);
-  // TODO load data
+interface Props {
+  positions: TeamType[];
+}
+
+const LeagueTable = (props: Props) => {
+  const [positions, setPositions] = useState<TeamType[]>(props.positions);
 
   const swapPositions = (sourceTeamId: string, targetTeamId: string) => {
     setPositions(
