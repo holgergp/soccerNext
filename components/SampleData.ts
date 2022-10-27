@@ -1,4 +1,4 @@
-import { TeamType } from "../components/LeagueTable/Positions";
+import { TeamType } from "./LeagueTable/Positions";
 
 export const SAMPLE_LEAGUE_TABLE: TeamType[] = [
   {
