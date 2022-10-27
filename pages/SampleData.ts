@@ -1,4 +1,4 @@
-import { TeamType } from "../../components/LeagueTable/Positions";
+import { TeamType } from "../components/LeagueTable/Positions";
 
 export const SAMPLE_LEAGUE_TABLE: TeamType[] = [
   {
@@ -8,10 +8,6 @@ export const SAMPLE_LEAGUE_TABLE: TeamType[] = [
   {
     name: "Borussia Dortmund",
     id: "BVB",
-  },
-  {
-    name: "FC Bayern München",
-    id: "FCB",
   },
   {
     name: "VFL Wolfsburg",
@@ -34,16 +30,16 @@ export const SAMPLE_LEAGUE_TABLE: TeamType[] = [
     id: "1FC",
   },
   {
-    name: "FC Ingolstadt",
-    id: "FCI",
+    name: "VFL Bochum",
+    id: "BOC",
   },
   {
-    name: "Darmstadt 98",
-    id: "D98",
+    name: "Union Berlin",
+    id: "EIU",
   },
   {
-    name: "Hamburger SV",
-    id: "HSV",
+    name: "SC Freiburg",
+    id: "SCF",
   },
   {
     name: "Eintracht Frankfurt",
@@ -62,15 +58,19 @@ export const SAMPLE_LEAGUE_TABLE: TeamType[] = [
     id: "FCA",
   },
   {
-    name: "Hannover 96",
-    id: "H96",
-  },
-  {
     name: "Mainz 05",
     id: "M05",
   },
   {
     name: "VFB Stuttgart",
     id: "VFB",
+  },
+  {
+    name: "RB Leipzig",
+    id: "RED",
+  },
+  {
+    name: "FC Bayern München",
+    id: "FCB",
   },
 ];

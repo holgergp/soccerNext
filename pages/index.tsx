@@ -1,6 +1,5 @@
 import LeagueTable from "../components/LeagueTable/LeagueTable";
 import React from "react";
-import { SAMPLE_LEAGUE_TABLE } from "./api/SampleData";
 import { TeamType } from "../components/LeagueTable/Positions";
 import { GetStaticProps, NextPage } from "next";
 
@@ -23,14 +22,14 @@ export default Home;
 // This function gets called at build time
 export const getStaticProps: GetStaticProps = async () => {
   // Call an external API endpoint to get posts
-  //  const res = await fetch("https://.../posts");
-  //const posts = await res.json();
+  const res = await fetch("https://soccer-next.netlify.app/api/teams");
+  const positions = await res.json();
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
     props: {
-      positions: SAMPLE_LEAGUE_TABLE,
+      positions,
     },
   };
 };
